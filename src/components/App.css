@@ -21,17 +21,15 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
+
 .App-header + .App-intro {
   padding-top: calc(20vh + 10px);
 }
 
 .App-intro {
   font-size: large;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -53,7 +51,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  /* margin-top: 10px; */
 }
 
 input[type="submit"] {
@@ -66,12 +63,10 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-
 input[type="submit"]:hover {
   background-color: #282c34;
   color: antiquewhite;
 }
-
 
 .search > input[type="text"]{
   width: 40%;
@@ -79,17 +74,17 @@ input[type="submit"]:hover {
 }
 
 .movies {
-  /* padding-top: 60px; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
 
-.App-header h2 {
+.App-header h1 {
   margin: 0;
 }
 
 .movie {
+  position: relative;
   padding: 5px 25px 10px 25px;
   max-width: 25%;
 }
@@ -98,6 +93,16 @@ input[type="submit"]:hover {
   margin: auto;
   font-weight: bold;
   color: rgb(161, 15, 15);
+}
+
+.more-info{
+  background-color: #282c34;
+  opacity: 0.95;
+  color: white;
+  position: absolute;
+  min-width: 95%;
+  height: 92%;
+  top: 10px;
 }
 
 @media screen and (min-width: 694px) and (max-width: 915px) {

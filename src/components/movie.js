@@ -1,12 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
+
+import MoreInfo from './moreInfo'
 
 const DEFAULT_PLACEHOLDER_IMAGE =
-  "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg";
+"https://lascrucesfilmfest.com/wp-content/uploads/2018/01/no-poster-available-737x1024.jpg"
 
 function Movie ({movie}){
+  const [isHovering, setIsHovering] = useState(false)
+
+  const handleMouseHover = ()=> {
+    setIsHovering(!isHovering)
+  }
+
   const poster = movie.Poster=== "N/A"? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster
   return (
-    <div className="movie">
+    <div 
+    className="movie"
+    onMouseEnter={handleMouseHover}
+    onMouseLeave ={handleMouseHover}
+    >
       <h2>{movie.Title}</h2>
       <div>
         <img
@@ -16,6 +28,7 @@ function Movie ({movie}){
         />
       </div>
       <p>{movie.Year}</p>
+      <MoreInfo isHovering={isHovering} movie={movie}/>
     </div>
   )
 }
