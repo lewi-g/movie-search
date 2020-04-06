@@ -3,7 +3,7 @@ import './App.css'
 import Header from './header'
 import Movie from './movie'
 
-const MOVIE_API_URL = 'http://www.omdbapi.com/?s=woman&apikey=7b3030fb'
+const MOVIE_API_URL = 'https://www.omdbapi.com/?s=woman&apikey=7b3030fb'
 
 const initialState = {
   loading: true,
@@ -78,7 +78,7 @@ function App() {
   
 
   const getMovieData = movie => {
-    fetch(`http://www.omdbapi.com/?apikey=7b3030fb&i=${movie.imdbID}`)
+    fetch(`https://www.omdbapi.com/?apikey=7b3030fb&i=${movie.imdbID}`)
       .then(response => response.json())
       .then(jsonResponse => {
         movie.Plot = jsonResponse.Plot
